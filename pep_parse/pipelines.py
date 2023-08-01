@@ -1,6 +1,6 @@
 import csv
-from collections import defaultdict
 import datetime as dt
+from collections import defaultdict
 
 from pep_parse.constants import OUTPUT_DIR, BASE_DIR
 

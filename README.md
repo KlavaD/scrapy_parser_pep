@@ -12,7 +12,7 @@ _status_summary_ДатаВремя.csv_ - Файлы со сводкой по с
 
 **Инструменты и стек:**
 
-Python 3.7+,
+Python 3.7+,\
 [Scrapy](https://docs.scrapy.org/)
 
 **Как запустить проект:**
