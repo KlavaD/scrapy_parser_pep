@@ -3,9 +3,7 @@ import datetime as dt
 from _csv import QUOTE_NONE
 from collections import defaultdict
 
-from pep_parse.settings import RESULT_DIR, DATETIME_FORMAT, BASE_DIR, OUTPUT_DIR
-
-BASE_DIR = BASE_DIR
+from pep_parse.settings import DATETIME_FORMAT, BASE_DIR, OUTPUT_DIR
 
 
 class PepParsePipeline:
