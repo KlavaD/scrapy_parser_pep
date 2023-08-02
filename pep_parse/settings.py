@@ -18,7 +18,7 @@ PEP_DOC_URL = 'https://peps.python.org/'
 BASE_DIR = Path(__file__).parent.parent
 OUTPUT_DIR = 'results'
 RESULT_DIR = BASE_DIR / OUTPUT_DIR
-RESULT_DIR.mkdir(exist_ok=True)
+
 
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
