@@ -3,18 +3,15 @@ from urllib.parse import urljoin
 import scrapy
 
 from pep_parse.items import PepParseItem
-from pep_parse.settings import PEP_DOMAIN, URL_HTTPS, RESULT_DIR
+from pep_parse.settings import PEP_DOMAIN
 
 
 class PepSpider(scrapy.Spider):
     name = 'pep'
     allowed_domains = [PEP_DOMAIN, ]
-    start_urls = []
-    for domain in allowed_domains:
-        start_urls.append(URL_HTTPS + domain + '/')
+    start_urls = [f'https://{domain}/' for domain in allowed_domains]
 
     def parse(self, response):
-        RESULT_DIR.mkdir(exist_ok=True)
         for pep_link in response.css('a.pep::attr(href)').getall():
             yield response.follow(
                 urljoin(self.start_urls[0], pep_link),
