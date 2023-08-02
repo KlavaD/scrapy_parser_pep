@@ -1,13 +1,10 @@
 from scrapy import signals
 
-from pep_parse.settings import RESULT_DIR
-
 
 class PepParseSpiderMiddleware:
 
     @classmethod
     def from_crawler(cls, crawler):
-        RESULT_DIR.mkdir(exist_ok=True)
         s = cls()
         crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)
         return s

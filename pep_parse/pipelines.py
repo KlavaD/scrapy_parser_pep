@@ -3,10 +3,13 @@ import datetime as dt
 from _csv import QUOTE_NONE
 from collections import defaultdict
 
-from pep_parse.settings import DATETIME_FORMAT, BASE_DIR, OUTPUT_DIR
+from pep_parse.settings import DATETIME_FORMAT, BASE_DIR, OUTPUT_DIR, RESULT_DIR
 
 
 class PepParsePipeline:
+
+    def __init__(self):
+        RESULT_DIR.mkdir(exist_ok=True)
 
     def open_spider(self, spider):
         self.count_status_peps = defaultdict(int)
